@@ -9,5 +9,105 @@ Ans...
 
 
 
+//  a) Print odd numbers in an array using Arrow Function
+((arr) => {
+    let odd = [];
+    for (let i in arr){
+        if(arr[i] % 2 !== 0){
+            odd.push(arr[i])
+        }
+    }
+    console.log(odd);
+
+})([1,2,3,4,5,6,7,8,9,10]);
+
+_______________________________________________________________________________________________________________________________________
+
+// b) Convert all the strings to title caps in a string array using IIFE
+
+((str) => {
+    str = str.toLowerCase().split(' ');
+    for (var i = 0; i < str.length; i++) {
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+    }
+    console.log(str.join(' '));
+
+})("Convert all the strings to title caps in");
+
+
+
+// c) Sum of all numbers in an array using IIFE
+
+((arr) => {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+  
+    console.log(sum);
+
+})([1,2,3,4,5,6,7,8,9,10]);
+
+___________________________________________________________________________________________________________________
+
+// d)  Return all the prime numbers in an array using IIFE function
+
+((arr) => {
+    var  num="";
+    for(i=0;i<arr.length;i++)
+    {
+        var count=0;
+        for(j=1;j<=arr[i];j++)
+        {
+            if(arr[i]%j===0)
+            {
+                count++
+            }
+        }
+        if(count==2)
+        {
+            num+=arr[i]+" "
+        }
+    }
+    
+
+    console.log(num)
+
+})([1,2,3,4,5,6,7,8,9,11]);
+
+__________________________________________________________________________________________________________________
+
+
+// e) Return all the palindromes in an array using IIFE function
+
+((arr) => {
+    var res="";
+    var ans="";
+    for(i=0;i<arr.length;i++)
+    {
+        res+=arr[i];
+        var count=0
+        
+        for(j=0;j<res.length;j++)
+        {
+            if(res[j]===res[((res.length-1)-j)])
+            {
+                count++
+                
+            }
+        }
+        if(count===res.length)
+        {
+            ans+=res+" "
+        }
+        res="";
+    }
+    console.log(ans);
+ 
+}) ([1,11,343,200,798,80108,8008,999,7171,700007]);
+
+
+
+
 
            
