@@ -12,7 +12,98 @@ Ans......
 
   a) Print odd numbers in an array?
   
-  
-  
 
-          
+// Print odd numbers in an array using anonymous function
+
+let getOdd = function(arr){
+    let odd = [];
+    for (let i in arr){
+        if(arr[i] % 2 !== 0){
+            odd.push(arr[i])
+        }
+    }
+    console.log(odd);
+
+}
+getOdd([1,2,3,4,5,6,7,8,9,10]);
+
+
+//  Print odd numbers in an array using IIFE function
+
+(function (arr) {
+    let odd = [];
+    for (let i in arr){
+        if(arr[i] % 2 !== 0){
+            odd.push(arr[i])
+        }
+    }
+    console.log(odd);
+
+})([1,2,3,4,5,6,7,8,9,10]);
+
+ 
+
+
+____________________________________________________________________________________________________________________
+
+b) Convert all the strings to title caps in a string array
+
+  
+//Convert all the strings to title caps in a string array using anonymous function
+
+let getStr = function(str){
+    str = str.toLowerCase().split(' ');
+    for (var i = 0; i < str.length; i++) {
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+    }
+    console.log(str.join(' '));
+
+}
+getStr("Convert all the strings to title caps in");
+
+
+
+// Convert all the strings to title caps in a string array using IIFE
+
+(function (str) {
+    str = str.toLowerCase().split(' ');
+    for (var i = 0; i < str.length; i++) {
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+    }
+    console.log(str.join(' '));
+
+})("Convert all the strings to title caps in");
+
+__________________________________________________________________________________________________________
+
+ c) Sum of all numbers in an array
+ 
+ // c) Sum of all numbers in an array using anonymous function
+
+
+let getSum = function(arr){
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+  
+    console.log(sum);
+
+}
+getSum([1,2,3,4,5,6,7,8,9,10]);
+
+
+// c) Sum of all numbers in an array using IIFE
+
+(function (arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+  
+    console.log(sum);
+
+})([1,2,3,4,5,6,7,8,9,10]);
+
+
+
