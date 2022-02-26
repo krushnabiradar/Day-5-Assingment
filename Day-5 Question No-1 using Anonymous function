@@ -1,0 +1,281 @@
+Q1.....Do the below programs in anonymous function & IIFE
+          a) Print odd numbers in an array
+          b) Convert all the strings to title caps in a string array
+          c) Sum of all numbers in an array
+          d) Return all the prime numbers in an array
+          e) Return all the palindromes in an array
+          f) Return median of two sorted arrays of the same size
+          g) Remove duplicates from an array
+          h) Rotate an array by k times
+          
+Ans......
+
+a) Print odd numbers in an array?
+  
+
+// Print odd numbers in an array using anonymous function
+
+let getOdd = function(arr){
+    let odd = [];
+    for (let i in arr){
+        if(arr[i] % 2 !== 0){
+            odd.push(arr[i])
+        }
+    }
+    console.log(odd);
+
+}
+getOdd([1,2,3,4,5,6,7,8,9,10]);
+
+__________________________________________________________________________________
+
+b) Convert all the strings to title caps in a string array
+
+  
+//Convert all the strings to title caps in a string array using anonymous function
+
+let getStr = function(str){
+    str = str.toLowerCase().split(' ');
+    for (var i = 0; i < str.length; i++) {
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+    }
+    console.log(str.join(' '));
+
+}
+getStr("Convert all the strings to title caps in");
+
+________________________________________________________________________________________________________
+
+
+c) Sum of all numbers in an array
+ 
+ // Sum of all numbers in an array using anonymous function
+
+
+let getSum = function(arr){
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+  
+    console.log(sum);
+
+}
+getSum([1,2,3,4,5,6,7,8,9,10]);
+
+__________________________________________________________________________________________________________
+
+d) Return all the prime numbers in an array
+ 
+ 
+//  Return all the prime numbers in an array using anonymous function
+
+var getPrime =function(arr){
+    var  num="";
+    for(i=0;i<arr.length;i++)
+    {
+        var count=0;
+        for(j=1;j<=arr[i];j++)
+        {
+            if(arr[i]%j===0)
+            {
+                count++
+            }
+        }
+        if(count==2)
+        {
+            num+=arr[i]+" "
+        }
+    }
+    
+
+    console.log(num)
+ 
+}
+getPrime([1,2,3,4,5,6,7,8,9,11]);
+
+______________________________________________________________________________________________________________
+
+e) Return all the palindromes in an array
+
+// Return all the palindromes in an array using anonymous function
+
+let getPalin=function(arr){
+    var res="";
+    var ans="";
+    for(i=0;i<arr.length;i++)
+    {
+        res+=arr[i];
+        var count=0
+        
+        for(j=0;j<res.length;j++)
+        {
+            if(res[j]===res[((res.length-1)-j)])
+            {
+                count++
+                
+            }
+        }
+        if(count===res.length)
+        {
+            ans+=res+" "
+        }
+        res="";
+    }
+    console.log(ans);
+ 
+}
+getPalin([1,11,343,200,798,80108,8008,999,7171,700007]);
+
+____________________________________________________________________________________________________________
+
+f) Return median of two sorted arrays of the same size
+ 
+ 
+ // Return median of two sorted arrays of the same size using anonymous function
+
+var getArr=function(a,b){
+    var c=[];
+    var n=a.length;
+    var p=b.length;
+    var i=0;
+    var j=0;
+    var med=0;
+    while(i<n && j<p)
+    {
+        if(a[i]<b[j])
+        {
+            c.push(a[i])
+            i++
+        }
+        else
+        {
+            c.push(b[j])
+            j++
+        }
+    }
+    
+     if(i<n)
+     {
+         for(let k=i;k<n;k++)
+         {
+             c.push(a[k])
+         }
+     }
+     else if(j<p)
+     {
+         for(let m=j;m<p;m++)
+         {
+             c.push(b[m])
+         }
+     }
+     if(c.length%2===0)
+     {
+         med=(c[(c.length/2)-1]+c[c.length/2])/2
+     }
+     else
+     {
+         med=c[Math.floor(c.length/2)]
+     }
+     console.log(med);
+    
+}
+getArr([1,2,3,4,5,6,7,8,9,10],[11,12,13,14,15,16,17,18,19,20]);
+
+___________________________________________________________________________________________________________________
+
+g) Remove duplicates from an array
+
+// Remove duplicates from an array using anonymous function
+
+let getArr=function(arr){
+    let b=[];
+    let n=arr.length;
+    for(let i=0;i<n-1;i++)
+    {
+        for(let j=i+1;j<n;j++)
+        {
+            if(arr[i]===arr[j])
+            {
+                delete arr[j]
+            }
+        }
+    }
+    for(let i=0;i<arr.length;i++)
+    {
+        if(arr[i]%10===Math.floor(arr[i]%10))
+        {
+            b.push(arr[i])
+        }
+    }
+    let c=""
+    for(let i=0;i<b.length-1;i++)
+     {
+         c+=b[i]+" ";
+    }
+    c+=b[b.length-1];
+     
+    console.log(c);
+    
+};
+
+getArr([1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9]);
+
+______________________________________________________________________________________________________________
+
+h) Rotate an array by k times
+
+//Rotate an array by k times using anonymous function
+
+let getRotate=function(arr,k){
+    n=arr.length;
+  c=[];
+  d="";
+  for(i=0;i<n;i++)
+  {
+      c[(i+k)%(n)]=arr[i]
+  }
+  for(i=0;i<c.length-1;i++)
+  {
+      d+=c[i]+" "
+  }
+  d+=c[c.length-1]
+  console.log(d);
+};
+
+getRotate([1,2,3,4,5],3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
